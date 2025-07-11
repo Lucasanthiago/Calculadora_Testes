@@ -28,8 +28,8 @@ struct ContentView: View {
                                 .frame(width: 60, height: 60)
                                 .background(Color.gray.opacity(0.2))
                                 .cornerRadius(30)
-                                .accessibilityIdentifier(button)
                         }
+                        .accessibilityIdentifier(button)
                     }
                 }
             }
