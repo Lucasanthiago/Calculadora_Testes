@@ -8,29 +8,29 @@
 import XCTest
 @testable import Calculadora_Testes
 
-final class Calculadora_TestesTests: XCTestCase {
+
+final class SuperCalculatorTests: XCTestCase {
+    var calculator: CalculatorLogic!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        calculator = CalculatorLogic()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testAddition() {
+        calculator.setDigit("2")
+        calculator.setOperation(.add)
+        calculator.setDigit("3")
+        calculator.equals()
+        XCTAssertEqual(calculator.displayValue, "5")
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testDivisionByZero() {
+        calculator.setDigit("5")
+        calculator.setOperation(.divide)
+        calculator.setDigit("0")
+        calculator.equals()
+        XCTAssertEqual(calculator.displayValue, "Error")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    // Adicione outros testes se quiser!
 }
