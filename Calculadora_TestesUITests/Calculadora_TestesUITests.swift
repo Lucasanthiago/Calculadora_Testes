@@ -21,7 +21,7 @@ final class SuperCalculatorUITests: XCTestCase {
     /// Taps buttons to calculate 1 + 2 and checks if the display shows 3
     func testBasicAdditionUI() {
         app.buttons["1"].tap()
-        app.buttons["+"]?.tap()
+        app.buttons["+"].tap()
         app.buttons["2"].tap()
         app.buttons["="].tap()
         let result = app.staticTexts["displayLabel"].label
@@ -31,9 +31,9 @@ final class SuperCalculatorUITests: XCTestCase {
     /// Ensures the UI presents "Error" when dividing by zero
     func testDivisionByZeroUI() {
         app.buttons["5"].tap()
-        app.buttons["/"]?.tap()
+        app.buttons["/"].tap()
         app.buttons["0"].tap()
-        app.buttons["="]?.tap()
+        app.buttons["="].tap()
         let result = app.staticTexts["displayLabel"].label
         XCTAssertEqual(result, "Error")
     }
@@ -41,9 +41,9 @@ final class SuperCalculatorUITests: XCTestCase {
     /// Calculates 8 - 2 = 6 using the interface
     func testSubtractionUI() {
         app.buttons["8"].tap()
-        app.buttons["-"]?.tap()
+        app.buttons["-"].tap()
         app.buttons["2"].tap()
-        app.buttons["="]?.tap()
+        app.buttons["="].tap()
         let result = app.staticTexts["displayLabel"].label
         XCTAssertEqual(result, "6")
     }
@@ -51,9 +51,9 @@ final class SuperCalculatorUITests: XCTestCase {
     /// Calculates 4 * 5 = 20 through taps
     func testMultiplicationUI() {
         app.buttons["4"].tap()
-        app.buttons["*"]?.tap()
+        app.buttons["*"].tap()
         app.buttons["5"].tap()
-        app.buttons["="]?.tap()
+        app.buttons["="].tap()
         let result = app.staticTexts["displayLabel"].label
         XCTAssertEqual(result, "20")
     }
@@ -61,13 +61,13 @@ final class SuperCalculatorUITests: XCTestCase {
     /// Tests decimal input: 2.5 + 2.5 = 5
     func testDecimalAdditionUI() {
         app.buttons["2"].tap()
-        app.buttons["."]?.tap()
+        app.buttons["."].tap()
         app.buttons["5"].tap()
-        app.buttons["+"]?.tap()
+        app.buttons["+"].tap()
         app.buttons["2"].tap()
-        app.buttons["."]?.tap()
+        app.buttons["."].tap()
         app.buttons["5"].tap()
-        app.buttons["="]?.tap()
+        app.buttons["="].tap()
         let result = app.staticTexts["displayLabel"].label
         XCTAssertEqual(result, "5")
     }
@@ -83,11 +83,11 @@ final class SuperCalculatorUITests: XCTestCase {
     /// Performs 2 + 3 then * 4 and expects 20 on screen
     func testChainedOperationsUI() {
         app.buttons["2"].tap()
-        app.buttons["+"]?.tap()
+        app.buttons["+"].tap()
         app.buttons["3"].tap()
-        app.buttons["*"]?.tap()
+        app.buttons["*"].tap()
         app.buttons["4"].tap()
-        app.buttons["="]?.tap()
+        app.buttons["="].tap()
         let result = app.staticTexts["displayLabel"].label
         XCTAssertEqual(result, "20")
     }
